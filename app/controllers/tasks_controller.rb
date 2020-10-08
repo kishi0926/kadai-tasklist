@@ -40,7 +40,7 @@ class TasksController < ApplicationController
     end
   end
 
- def destroy
+  def destroy
     @task = Task.find(params[:id])
     @task.destroy
 
@@ -52,7 +52,7 @@ class TasksController < ApplicationController
 
   # Strong Parameter
   def task_params
-    params.require(:task).permit(:content)
+    params.require(:task).permit(:content, :status)
   end
 
 end
